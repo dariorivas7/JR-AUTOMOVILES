@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "marca": "Renault",
+    "modelo": "Megane 1 Fase 2",
+    "motor": "1.9 dTi",
+    "anio": 2006,
+    "precio": 4500000,
+    "moneda": "ARS",
+    "ubicacion": "Córdoba",
+    "km": 180000,
+    "imagenPortada": ""
+  },
+  {
+    "id": 2,
+    "marca": "Volkswagen",
+    "modelo": "Golf",
+    "motor": "1.6",
+    "anio": 2015,
+    "precio": 9000000,
+    "moneda": "ARS",
+    "ubicacion": "Capital Federal",
+    "km": 95000,
+    "imagenPortada": "https://via.placeholder.com/300x200?text=Foto+Golf"
+  }
+]

@@ -1,0 +1,94 @@
+.header-container {
+    background-color: #111111;
+    color: #C5A059;
+    border-bottom: 4px solid #C5A059;
+    box-shadow: 0 4px 15px -5px rgba(197, 160, 89, 0.5);
+    position: relative;
+    z-index: 10;
+    font-family: 'Times New Roman', serif;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa el logo (izq) de los botones (der) */
+    padding: 15px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-title-group {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    flex-shrink: 0;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 3px rgba(197, 160, 89, 0.4));
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* --- Estilos de la Navegación --- */
+.header-nav {
+    display: flex;
+    gap: 20px; /* Espacio entre botones */
+    align-items: center;
+}
+
+.nav-link {
+    color: #E6CFA0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FFFFFF;
+}
+
+/* El botón de admin lo hacemos un poco distinto (bordeado) */
+.admin-btn {
+    border: 1px solid #C5A059;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.admin-btn:hover {
+    background-color: #C5A059;
+    color: #111111;
+}
+
+/* --- Ajustes para celulares --- */
+@media (max-width: 850px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-title-group {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo-container {
+        margin-right: 0;
+    }
+}

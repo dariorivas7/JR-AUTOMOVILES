@@ -1,0 +1,38 @@
+:root {
+  --color-negro-fondo: #111111;
+  --color-dorado-principal: #C5A059;
+  --color-dorado-claro: #E6CFA0;
+  --color-blanco-texto: #FFFFFF;
+  --color-rojo-acento: #D62828;
+}
+
+/* 1. Quitamos TODOS los márgenes y bordes de TODOS los elementos */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Pintamos el fondo base absoluto */
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-negro-fondo);
+  color: var(--color-blanco-texto);
+  font-family: 'Times New Roman', Georgia, serif;
+  overflow-x: hidden; /* Evita que haya scroll horizontal accidental */
+}
+
+/* 3. DESTRUIMOS las reglas por defecto de Vite en el contenedor de React */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100% !important; /* Vite suele poner esto en 1280px */
+  padding: 0 !important;      /* Vite suele poner 2rem de padding aquí */
+  margin: 0 !important;       /* Vite suele poner margin: 0 auto */
+  text-align: left !important;
+}
+
+a {
+  text-decoration: none;
+}
