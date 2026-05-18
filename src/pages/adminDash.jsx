@@ -93,7 +93,7 @@ function AdminDash() {
 }
 
 const styles = {
-  tableBox: { border: '1px solid #333', borderRadius: '8px', overflow: 'hidden', background: '#111' },
+  tableBox: { border: '1px solid #333', borderRadius: '8px', overflowX: 'auto', background: '#111' },
   table: { width: '100%', borderCollapse: 'collapse', color: '#eee' },
   th: { padding: '12px', background: '#222', textAlign: 'left', borderBottom: '2px solid #333' },
   td: { padding: '10px', borderBottom: '1px solid #333' },

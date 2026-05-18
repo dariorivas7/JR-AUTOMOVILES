@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { obtenerAuto } from '../lib/autosService';
 import placeholderJR from '../assets/fiat-imagen.jpeg';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 function CarDetails() {
   const { id } = useParams();
   const [auto, setAuto] = useState(null);
   const [cargando, setCargando] = useState(true);
   const [fotoActiva, setFotoActiva] = useState(0);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     async function cargar() {
@@ -75,10 +77,10 @@ function CarDetails() {
         <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap' }}>
 
           {/* Columna izquierda: galería */}
-          <div style={{ flex: '1 1 480px' }}>
+          <div style={{ flex: '1 1 300px' }}>
 
             {/* Foto principal */}
-            <div style={{ width: '100%', height: '340px', backgroundColor: '#0a0a0a', borderRadius: '2px', overflow: 'hidden', marginBottom: '12px', border: '1px solid rgba(197,160,89,0.1)' }}>
+            <div style={{ width: '100%', height: isMobile ? '240px' : '340px', backgroundColor: '#0a0a0a', borderRadius: '2px', overflow: 'hidden', marginBottom: '12px', border: '1px solid rgba(197,160,89,0.1)' }}>
               {fotoMostrada ? (
                 <img
                   src={fotoMostrada}
@@ -118,7 +120,7 @@ function CarDetails() {
           </div>
 
           {/* Columna derecha: datos */}
-          <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: '0' }}>
 
             {/* Marca y modelo */}
             <h1 style={{ fontSize: '1.8rem', fontWeight: 300, color: '#ffffff', letterSpacing: '2px', margin: '0 0 4px 0' }}>
