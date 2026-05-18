@@ -36,3 +36,79 @@ html, body {
 a {
   text-decoration: none;
 }
+
+/* ══════════════════════════════
+   RESPONSIVE — Mobile first
+   ══════════════════════════════ */
+
+/* ── Contenedor de páginas ── */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding: 32px 20px;
+  }
+}
+
+/* ── Grid de autos ── */
+/* Móvil: 1 columna full-width (igual que Kavak, ML Autos) */
+.autos-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 601px) {
+  .autos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* ── CarCard imagen ── */
+.car-card-image {
+  height: 210px;   /* Mobile: full-width card, buena proporción horizontal */
+}
+
+@media (min-width: 601px) {
+  .car-card-image {
+    height: 190px;
+  }
+}
+
+/* ── CarCard cuerpo ── */
+.car-card-body {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 601px) {
+  .car-card-body {
+    padding: 18px;
+  }
+}
+
+/* ── CarCard precio ── */
+.car-card-price {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 601px) {
+  .car-card-price {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Header tagline: ocultar en pantallas muy pequeñas ── */
+@media (max-width: 400px) {
+  .header-tagline {
+    display: none;
+  }
+}

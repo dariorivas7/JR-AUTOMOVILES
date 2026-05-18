@@ -13,7 +13,7 @@ function Home() {
   const [filtrosAplicados, setFiltrosAplicados] = useState(FILTROS_BASE);
   const [hayFiltrosSinAplicar, setHayFiltrosSinAplicar] = useState(false);
   const [filtrosVisibles, setFiltrosVisibles] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 900px)');
 
   useEffect(() => {
     async function cargar() {
@@ -85,7 +85,7 @@ function Home() {
 
   const grilla = (
     <main style={{ flexGrow: 1, minWidth: 0 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>
+      <div className="autos-grid">
         {autosFiltrados.map(auto => <CarCard key={auto.id} auto={auto} />)}
       </div>
 
@@ -102,7 +102,7 @@ function Home() {
   );
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 20px', backgroundColor: '#0f0f0f', minHeight: '100vh' }}>
+    <div className="page-container" style={{ backgroundColor: '#0f0f0f' }}>
 
       {isMobile ? (
         /* ── MOBILE LAYOUT ── */

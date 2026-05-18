@@ -10,7 +10,7 @@ function Landing() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '60px 20px',
+        padding: 'clamp(28px, 8vw, 60px) 20px',
         textAlign: 'center',
         backgroundColor: '#0f0f0f',
         position: 'relative',
@@ -82,7 +82,7 @@ function Landing() {
           fontSize: '0.85rem',
           color: 'rgba(255,255,255,0.4)',
           letterSpacing: '2px',
-          margin: '0 0 48px 0',
+          margin: '0 0 clamp(28px, 6vw, 48px) 0',
           textTransform: 'uppercase',
           maxWidth: '300px'
         }}>

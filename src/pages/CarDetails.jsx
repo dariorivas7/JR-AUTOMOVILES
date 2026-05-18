@@ -9,7 +9,7 @@ function CarDetails() {
   const [auto, setAuto] = useState(null);
   const [cargando, setCargando] = useState(true);
   const [fotoActiva, setFotoActiva] = useState(0);
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 900px)');
 
   useEffect(() => {
     async function cargar() {

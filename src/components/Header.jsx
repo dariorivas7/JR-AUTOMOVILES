@@ -19,7 +19,7 @@ const linkStyle = {
 function Header() {
   const [session, setSession] = useState(null);
   const [menuAbierto, setMenuAbierto] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 900px)');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function Header() {
         {/* Logo */}
         <Link to="/" onClick={cerrarMenu} style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}>
           <img src={logoJR} alt="JR Automotores" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
-          <span style={{ fontSize: '0.6rem', letterSpacing: '3px', color: '#C5A059', textTransform: 'uppercase', fontWeight: 400 }}>
+          <span className="header-tagline" style={{ fontSize: '0.6rem', letterSpacing: '3px', color: '#C5A059', textTransform: 'uppercase', fontWeight: 400 }}>
             Compra · Venta · Consignación
           </span>
         </Link>

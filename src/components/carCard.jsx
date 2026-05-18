@@ -6,10 +6,7 @@ function CarCard({ auto }) {
   const tieneImagenValida = auto.imagenPortada && auto.imagenPortada.trim() !== "";
 
   return (
-    <Link
-      to={`/auto/${auto.id}`}
-      style={{ textDecoration: 'none', display: 'block' }}
-    >
+    <Link to={`/auto/${auto.id}`} style={{ textDecoration: 'none', display: 'block' }}>
       <div
         style={{
           backgroundColor: '#141414',
@@ -18,10 +15,10 @@ function CarCard({ auto }) {
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
-          position: 'relative',
           fontFamily: 'sans-serif',
           transition: 'border-color 0.25s ease, transform 0.25s ease',
           cursor: 'pointer',
+          height: '100%',
         }}
         onMouseOver={(e) => {
           e.currentTarget.style.borderColor = 'rgba(197,160,89,0.5)';
@@ -33,8 +30,8 @@ function CarCard({ auto }) {
         }}
       >
 
-        {/* Imagen */}
-        <div style={{ width: '100%', height: '190px', backgroundColor: '#0a0a0a', overflow: 'hidden' }}>
+        {/* Imagen — height controlada por CSS (.car-card-image) */}
+        <div className="car-card-image" style={{ width: '100%', backgroundColor: '#0a0a0a', overflow: 'hidden' }}>
           {tieneImagenValida ? (
             <img
               src={auto.imagenPortada}
@@ -54,36 +51,39 @@ function CarCard({ auto }) {
           )}
         </div>
 
-        {/* Cuerpo */}
-        <div style={{ padding: '18px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Cuerpo — padding controlado por CSS (.car-card-body) */}
+        <div className="car-card-body">
 
-          <h2 style={{ fontSize: '1rem', margin: '0 0 6px 0', color: '#ffffff', fontWeight: 400, letterSpacing: '0.5px' }}>
+          <h2 style={{ fontSize: '1.05rem', margin: '0 0 8px 0', color: '#ffffff', fontWeight: 400, letterSpacing: '0.5px', lineHeight: 1.3 }}>
             <span style={{ fontWeight: 700 }}>{auto.marca}</span> {auto.modelo}
           </h2>
 
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '18px' }}>
-            {[auto.anio, auto.km != null ? `${auto.km.toLocaleString()} km` : null, auto.motor].filter(Boolean).map((dato, i) => (
-              <span key={i} style={{
-                fontSize: '0.65rem',
-                letterSpacing: '1.5px',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.35)',
-                backgroundColor: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                padding: '3px 8px',
-                borderRadius: '2px',
-              }}>
-                {dato}
-              </span>
-            ))}
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '14px' }}>
+            {[auto.anio, auto.km != null ? `${auto.km.toLocaleString('es-AR')} km` : null, auto.motor]
+              .filter(Boolean)
+              .map((dato, i) => (
+                <span key={i} style={{
+                  fontSize: '0.65rem',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.4)',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  padding: '3px 8px',
+                  borderRadius: '2px',
+                }}>
+                  {dato}
+                </span>
+              ))}
           </div>
 
-          <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(197,160,89,0.1)' }}>
+          <div style={{ marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid rgba(197,160,89,0.1)' }}>
             <p style={{ color: 'rgba(255,255,255,0.3)', margin: '0 0 3px 0', fontSize: '0.62rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
               Precio de contado
             </p>
-            <h3 style={{ margin: 0, fontSize: '1.4rem', color: '#C5A059', fontWeight: 400, letterSpacing: '1px' }}>
-              $ {auto.precio?.toLocaleString("es-AR")}
+            {/* font-size controlada por CSS (.car-card-price) */}
+            <h3 className="car-card-price" style={{ margin: 0, color: '#C5A059', fontWeight: 400, letterSpacing: '0.5px' }}>
+              $ {auto.precio?.toLocaleString('es-AR')}
             </h3>
           </div>
 
