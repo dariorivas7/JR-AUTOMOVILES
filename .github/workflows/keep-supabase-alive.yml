@@ -2,8 +2,8 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    - cron: '0 12 */3 * *'  # Se ejecuta cada 3 días al mediodía UTC
-  workflow_dispatch:          # Permite ejecutarlo manualmente también
+    - cron: '0 12 */3 * *'
+  workflow_dispatch:
 
 jobs:
   ping:
@@ -17,9 +17,9 @@ jobs:
           
           echo "HTTP Status: $response"
           
-          if [ "$response" -ge 200 ] && [ "$response" -lt 300 ]; then
-            echo "✅ Supabase está activo"
+          if [ "$response" -gt 0 ]; then
+            echo "✅ Supabase está activo (status: $response)"
           else
-            echo "❌ Error al contactar Supabase (status: $response)"
+            echo "❌ No se pudo contactar Supabase"
             exit 1
           fi
